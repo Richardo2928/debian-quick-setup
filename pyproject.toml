@@ -1,0 +1,7 @@
+[project]
+name = "debian-quick-setup"
+version = "0.1.0"
+description = "Automated provisioning tool for Debian-based systems - install dev tools, IDEs, and configs with a single command"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = []
