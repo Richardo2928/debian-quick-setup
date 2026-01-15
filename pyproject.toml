@@ -4,4 +4,7 @@ version = "0.1.0"
 description = "Automated provisioning tool for Debian-based systems - install dev tools, IDEs, and configs with a single command"
 readme = "README.md"
 requires-python = ">=3.13"
-dependencies = []
+dependencies = [
+    "textual>=7.3.0",
+    "textual-dev>=1.8.0",
+]
