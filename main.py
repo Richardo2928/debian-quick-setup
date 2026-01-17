@@ -24,14 +24,24 @@ def run_cmd(cmd: str) -> bool:
 # ---------------------------------------------
 # -------- Package Managers per Distro --------
 # ---------------------------------------------
+
+DEBIAN_BASED = ["debian", "ubuntu", "linuxmint", "pop", "elementary", "kali", "mx", "zorin"]
+FEDORA_BASED = ["fedora", "centos", "rhel"]
+ARCH_BASED = ["arch", "manjaro", "endeavouros"]
+
 DISTRO = platform.freedesktop_os_release().get("ID", "unknown").lower()
+
+def set_distro_based():
+    global DISTRO
+    if DISTRO in DEBIAN_BASED:
+       DISTRO = "debian"
+    elif DISTRO in FEDORA_BASED:
+        DISTRO = "fedora"
+    elif DISTRO in ARCH_BASED:
+        DISTRO = "arch"
 
 PKG_MANAGERS = {
     "debian": {
-        "install": "sudo apt install -y {pkg}",
-        "update": "sudo apt update && sudo apt upgrade -y",
-    },
-    "ubuntu": {
         "install": "sudo apt install -y {pkg}",
         "update": "sudo apt update && sudo apt upgrade -y",
     },
