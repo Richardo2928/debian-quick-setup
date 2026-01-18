@@ -348,8 +348,12 @@ def setup():
     }
     executed = set()
 
+    log(f"Distribución detectada: {DISTRO}")
+    set_distro_based()
+    
     log("Iniciando Setup...")
-
+    # updating system
+    log("Actualizando sistema...")
     if not update_system():
         fail("Algo inesperado sucedio durante la actualización del sistema")
         log("Saliendo del setup")
