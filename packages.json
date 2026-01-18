@@ -1,0 +1,365 @@
+{
+  "packages": {
+    "curl": {
+      "id": "curl",
+      "name": "curl",
+      "description": "Herramienta para transferir datos con URLs",
+      "category": "utilities",
+      "methods": ["apt"],
+      "default_method": "apt",
+      "install": {
+        "apt": {
+          "command": "sudo apt install -y curl",
+          "requires": []
+        }
+      }
+    },
+    "extrepo": {
+      "id": "extrepo",
+      "name": "Extrepo",
+      "description": "Repositorios extra para Debian/Ubuntu",
+      "category": "utilities",
+      "methods": ["apt"],
+      "default_method": "apt",
+      "install": {
+        "apt": {
+          "command": "sudo apt install -y extrepo",
+          "requires": []
+        }
+      }
+    },
+    "git": {
+      "id": "git",
+      "name": "Git",
+      "description": "Control de versiones distribuido",
+      "category": "development",
+      "methods": ["apt"],
+      "default_method": "apt",
+      "install": {
+        "apt": {
+          "command": "sudo apt install -y git",
+          "requires": []
+        }
+      }
+    },
+    "fastfetch": {
+      "id": "fastfetch",
+      "name": "fastfetch",
+      "description": "Resumen rápido del sistema",
+      "category": "utilities",
+      "methods": ["apt"],
+      "default_method": "apt",
+      "install": {
+        "apt": {
+          "command": "sudo apt install -y fastfetch",
+          "requires": []
+        }
+      }
+    },
+    "btop": {
+      "id": "btop",
+      "name": "btop",
+      "description": "Monitor de recursos interactivo",
+      "category": "utilities",
+      "methods": ["apt"],
+      "default_method": "apt",
+      "install": {
+        "apt": {
+          "command": "sudo apt install -y btop",
+          "requires": []
+        }
+      }
+    },
+    "ffmpeg": {
+      "id": "ffmpeg",
+      "name": "FFmpeg",
+      "description": "Suite para procesamiento multimedia",
+      "category": "utilities",
+      "methods": ["apt"],
+      "default_method": "apt",
+      "install": {
+        "apt": {
+          "command": "sudo apt install -y ffmpeg",
+          "requires": []
+        }
+      }
+    },
+    "tmux": {
+      "id": "tmux",
+      "name": "tmux",
+      "description": "Multiplexor de terminal",
+      "category": "utilities",
+      "methods": ["apt"],
+      "default_method": "apt",
+      "install": {
+        "apt": {
+          "command": "sudo apt install -y tmux",
+          "requires": []
+        }
+      }
+    },
+    "cpu-checker": {
+      "id": "cpu-checker",
+      "name": "CPU Checker",
+      "description": "Utilidades KVM/libvirt",
+      "category": "utilities",
+      "methods": ["apt"],
+      "default_method": "apt",
+      "install": {
+        "apt": {
+          "command": "sudo apt install -y cpu-checker",
+          "requires": []
+        }
+      }
+    },
+    "build-essential": {
+      "id": "build-essential",
+      "name": "build-essential",
+      "description": "Toolchain de compilación base",
+      "category": "development",
+      "methods": ["apt"],
+      "default_method": "apt",
+      "install": {
+        "apt": {
+          "command": "sudo apt install -y build-essential",
+          "requires": []
+        }
+      }
+    },
+    "homebrew": {
+      "id": "homebrew",
+      "name": "Homebrew",
+      "description": "Gestor de paquetes Homebrew para Linux",
+      "category": "package_managers",
+      "methods": ["script"],
+      "default_method": "script",
+      "install": {
+        "script": {
+          "command": "NONINTERACTIVE=1 /bin/bash -c \"$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)\"",
+          "requires": ["curl", "git"]
+        }
+      }
+    },
+    "gcc": {
+      "id": "gcc",
+      "name": "GCC (Homebrew)",
+      "description": "Compilador GNU via Homebrew",
+      "category": "development",
+      "methods": ["homebrew"],
+      "default_method": "homebrew",
+      "install": {
+        "homebrew": {
+          "command": "brew install gcc",
+          "requires": ["homebrew"]
+        }
+      }
+    },
+    "dysk": {
+      "id": "dysk",
+      "name": "dysk",
+      "description": "Herramienta de discos (Homebrew)",
+      "category": "utilities",
+      "methods": ["homebrew"],
+      "default_method": "homebrew",
+      "install": {
+        "homebrew": {
+          "command": "brew install dysk",
+          "requires": ["homebrew"]
+        }
+      }
+    },
+    "neovim": {
+      "id": "neovim",
+      "name": "Neovim",
+      "description": "Editor de texto basado en Vim",
+      "category": "development",
+      "methods": ["apt", "homebrew"],
+      "default_method": "apt",
+      "install": {
+        "apt": {
+          "command": "sudo apt install -y neovim",
+          "requires": []
+        },
+        "homebrew": {
+          "command": "brew install neovim",
+          "requires": ["homebrew"]
+        }
+      }
+    },
+    "flatpak": {
+      "id": "flatpak",
+      "name": "Flatpak",
+      "description": "Gestor de paquetes Flatpak",
+      "category": "package_managers",
+      "methods": ["apt"],
+      "default_method": "apt",
+      "install": {
+        "apt": {
+          "command": "sudo apt install -y flatpak && flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo",
+          "requires": []
+        }
+      }
+    },
+    "rclone": {
+      "id": "rclone",
+      "name": "Rclone",
+      "description": "Sincronización con nubes",
+      "category": "work",
+      "methods": ["script"],
+      "default_method": "script",
+      "install": {
+        "script": {
+          "command": "curl -O https://rclone.org/install.sh | sudo bash && rm install.sh",
+          "requires": ["curl"]
+        }
+      }
+    },
+    "obsidian": {
+      "id": "obsidian",
+      "name": "Obsidian",
+      "description": "Editor de notas Markdown",
+      "category": "work",
+      "methods": ["deb"],
+      "default_method": "deb",
+      "install": {
+        "deb": {
+          "url": "https://github.com/obsidianmd/obsidian-releases/releases/download/v1.9.14/obsidian_1.9.14_amd64.deb",
+          "command": "curl -L https://github.com/obsidianmd/obsidian-releases/releases/download/v1.9.14/obsidian_1.9.14_amd64.deb -o obsidian.deb && sudo apt install -y ./obsidian.deb && rm obsidian.deb",
+          "requires": ["curl"]
+        }
+      }
+    },
+    "vscode": {
+      "id": "vscode",
+      "name": "Visual Studio Code",
+      "description": "Editor de código de Microsoft",
+      "category": "work",
+      "methods": ["deb"],
+      "default_method": "deb",
+      "install": {
+        "deb": {
+          "url": "https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64",
+          "command": "curl -L https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64 -o vscode.deb && sudo apt install -y ./vscode.deb && rm vscode.deb",
+          "requires": ["curl"]
+        }
+      }
+    },
+    "jetbrains-toolbox": {
+      "id": "jetbrains-toolbox",
+      "name": "JetBrains Toolbox",
+      "description": "Gestor de IDEs JetBrains",
+      "category": "work",
+      "methods": ["tarball"],
+      "default_method": "tarball",
+      "install": {
+        "tarball": {
+          "url": "https://download.jetbrains.com/toolbox/jetbrains-toolbox-2.4.2.32922.tar.gz",
+          "command": "curl -L https://download.jetbrains.com/toolbox/jetbrains-toolbox-2.4.2.32922.tar.gz -o jb-toolbox.tar.gz && tar -xvzf jb-toolbox.tar.gz && rm ../jb-toolbox.tar.gz",
+          "requires": ["curl"]
+        }
+      }
+    },
+    "qtcreator_qtdesigner": {
+      "id": "qtcreator_qtdesigner",
+      "name": "Qt Creator y Qt Design Studio",
+      "description": "IDE y diseñador Qt vía Flatpak",
+      "category": "development",
+      "methods": ["flatpak"],
+      "default_method": "flatpak",
+      "install": {
+        "flatpak": {
+          "command": "flatpak install -y flathub io.qt.QtCreator && flatpak install -y flathub io.qt.qtdesignstudio",
+          "requires": ["flatpak"]
+        }
+      }
+    },
+    "plantuml": {
+      "id": "plantuml",
+      "name": "PlantUML",
+      "description": "Generación de diagramas UML",
+      "category": "development",
+      "methods": ["apt"],
+      "default_method": "apt",
+      "install": {
+        "apt": {
+          "command": "sudo apt install -y plantuml",
+          "requires": []
+        }
+      }
+    },
+    "docker-desktop": {
+      "id": "docker-desktop",
+      "name": "Docker Desktop",
+      "description": "Docker Desktop para Linux",
+      "category": "containers",
+      "methods": ["deb"],
+      "default_method": "deb",
+      "install": {
+        "deb": {
+          "url": "https://desktop.docker.com/linux/main/amd64/docker-desktop-amd64.deb",
+          "command": "curl -L 'https://desktop.docker.com/linux/main/amd64/docker-desktop-amd64.deb?utm_source=docker&utm_medium=webreferral&utm_campaign=docs-driven-download-linux-amd64' -o docker.deb && sudo apt install -y ./docker.deb && rm docker.deb",
+          "requires": ["curl", "docker_repo"]
+        }
+      }
+    },
+    "drawio": {
+      "id": "drawio",
+      "name": "draw.io Desktop",
+      "description": "Editor de diagramas",
+      "category": "design",
+      "methods": ["deb"],
+      "default_method": "deb",
+      "install": {
+        "deb": {
+          "url": "https://github.com/jgraph/drawio-desktop/releases/download/v27.0.9/drawio-amd64-27.0.9.deb",
+          "command": "curl -L https://github.com/jgraph/drawio-desktop/releases/download/v27.0.9/drawio-amd64-27.0.9.deb -o drawio.deb && sudo apt install -y ./drawio.deb && rm drawio.deb",
+          "requires": ["curl"]
+        }
+      }
+    },
+    "onlyoffice": {
+      "id": "onlyoffice",
+      "name": "ONLYOFFICE Desktop Editors",
+      "description": "Suite ofimática",
+      "category": "office",
+      "methods": ["deb"],
+      "default_method": "deb",
+      "install": {
+        "deb": {
+          "url": "https://github.com/ONLYOFFICE/DesktopEditors/releases/latest/download/onlyoffice-desktopeditors_amd64.deb",
+          "command": "curl -L https://github.com/ONLYOFFICE/DesktopEditors/releases/latest/download/onlyoffice-desktopeditors_amd64.deb -o onlyoffice.deb && sudo apt install -y ./onlyoffice.deb && rm onlyoffice.deb",
+          "requires": ["curl"]
+        }
+      }
+    },
+    "spotify": {
+      "id": "spotify",
+      "name": "Spotify",
+      "description": "Cliente de Spotify",
+      "category": "media",
+      "methods": ["apt"],
+      "default_method": "apt",
+      "install": {
+        "apt": {
+          "command": "curl -sS https://download.spotify.com/debian/pubkey_C85668DF69375001.gpg | sudo gpg --dearmor --yes -o /etc/apt/trusted.gpg.d/spotify.gpg && echo \"deb https://repository.spotify.com stable non-free\" | sudo tee /etc/apt/sources.list.d/spotify.list && sudo apt update && sudo apt install -y spotify-client",
+          "requires": ["curl"]
+        }
+      }
+    }
+  },
+  "special_requirements": {
+    "homebrew": {
+      "type": "environment_modifier",
+      "setup_task": "add_homebrew_to_path",
+      "binary_path": "/home/linuxbrew/.linuxbrew/bin:/home/$USER/.linuxbrew/bin"
+    },
+    "flatpak": {
+      "type": "package_manager",
+      "setup_task": "install_&_configure_flatpak"
+    },
+    "docker_repo": {
+      "type": "repository_setup",
+      "setup_task": "setup_apt_for_docker"
+    }
+  }
+}
