@@ -1,8 +1,8 @@
 from abc import ABC, abstractmethod
 from typing import Dict, Any, Optional
 
-from dqs.core.context import InstallationContext
-from dqs.utils.terminal_utils import log, ok, error, run_command
+from lqs.core.context import InstallationContext
+from lqs.utils.terminal_utils import log, ok, error, run_command
 
 # ==================================================================
 '''

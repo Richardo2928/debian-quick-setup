@@ -6,8 +6,8 @@
 # ==================================================================
 import os, platform
 from typing import Any
-from dqs.utils.terminal_utils import log, error, run_command, ok
-from dqs.core.installation_methods import PKGManager, DebMethod, FlatpakMethod, HomebrewMethod
+from lqs.utils.terminal_utils import log, error, run_command, ok
+from lqs.core.installation_methods import PKGManager, DebMethod, FlatpakMethod, HomebrewMethod
 
 
 DEBIAN_BASED = ["debian", "ubuntu", "linuxmint", "pop", "elementary", "kali", "mx", "zorin"]
