@@ -31,13 +31,11 @@ ARCH_BASED = ["arch", "manjaro", "endeavouros"]
 
 DISTRO = platform.freedesktop_os_release().get("ID", "unknown").lower()
 
-def set_distro_based():
-    global DISTRO
-    if DISTRO in DEBIAN_BASED:
-       DISTRO = "debian"
-    elif DISTRO in FEDORA_BASED:
-        DISTRO = "fedora"
-    elif DISTRO in ARCH_BASED:
+if DISTRO in DEBIAN_BASED:
+    DISTRO = "debian"
+elif DISTRO in FEDORA_BASED:
+    DISTRO = "fedora"
+elif DISTRO in ARCH_BASED:
         DISTRO = "arch"
 
 PKG_MANAGERS = {
